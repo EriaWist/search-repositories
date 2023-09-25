@@ -12,6 +12,7 @@ class SearchViewModel{
     weak var delegate: ViewModelDelegate?
     var cancellBag = Set<AnyCancellable>()
     var selectRepository:RepositoriesItem? = nil
+    var tmpQuery:String? = nil
     private var _repositoriesItem:[RepositoriesItem] = []
     {
         didSet{
@@ -23,8 +24,8 @@ class SearchViewModel{
             .map(\.owner.avatar_url)
             .flatMap(maxPublishers:.max(1)) { url in
                 URLSession.shared.dataTaskPublisher(for: URL(string: url)!)
-                           .map(\.data)
-                           .replaceError(with: Data())
+                    .map(\.data)
+                    .replaceError(with: Data())
             }
             .zip(repositoriesItem.publisher)
             .map{ (imageData, item) -> RepositoriesItem in
@@ -44,6 +45,7 @@ class SearchViewModel{
     func fetchData(query:String?) {
         _repositoriesItem = []
         if let query = query{
+            tmpQuery = query
             repositoriesPublisher(query: query)?
                 .sink(receiveCompletion: {error in
                     print(error)

@@ -10,10 +10,18 @@ import UIKit
 class ViewController: UIViewController {
     private var viewModel = SearchViewModel()
     @IBOutlet weak var tableView: UITableView!
+    let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         viewModel.delegate = self
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        //addActionu要iOS14
+    }
+    @objc func loadData(){
+        viewModel.fetchData(query: viewModel.tmpQuery)
+        self.refreshControl.endRefreshing()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToDetailViewController"{
