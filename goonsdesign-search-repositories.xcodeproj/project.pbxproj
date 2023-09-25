@@ -16,6 +16,8 @@
 		76B3B35E2AC16E3F003F1BD9 /* goonsdesign_search_repositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B35D2AC16E3F003F1BD9 /* goonsdesign_search_repositoriesTests.swift */; };
 		76B3B3682AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3672AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITests.swift */; };
 		76B3B36A2AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3692AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift */; };
+		76B3B3782AC1DED9003F1BD9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3772AC1DED9003F1BD9 /* SearchViewModel.swift */; };
+		76B3B37A2AC1DF49003F1BD9 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		76B3B3632AC16E3F003F1BD9 /* goonsdesign-search-repositoriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "goonsdesign-search-repositoriesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B3B3672AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goonsdesign_search_repositoriesUITests.swift; sourceTree = "<group>"; };
 		76B3B3692AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goonsdesign_search_repositoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76B3B3772AC1DED9003F1BD9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		76B3B3452AC16E3D003F1BD9 /* goonsdesign-search-repositories */ = {
 			isa = PBXGroup;
 			children = (
+				76B3B3762AC1DE6D003F1BD9 /* ViewModel */,
 				76B3B3462AC16E3D003F1BD9 /* AppDelegate.swift */,
 				76B3B3482AC16E3D003F1BD9 /* SceneDelegate.swift */,
 				76B3B34A2AC16E3D003F1BD9 /* ViewController.swift */,
@@ -125,6 +130,15 @@
 				76B3B3692AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift */,
 			);
 			path = "goonsdesign-search-repositoriesUITests";
+			sourceTree = "<group>";
+		};
+		76B3B3762AC1DE6D003F1BD9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				76B3B3772AC1DED9003F1BD9 /* SearchViewModel.swift */,
+				76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,8 @@
 			files = (
 				76B3B34B2AC16E3D003F1BD9 /* ViewController.swift in Sources */,
 				76B3B3472AC16E3D003F1BD9 /* AppDelegate.swift in Sources */,
+				76B3B3782AC1DED9003F1BD9 /* SearchViewModel.swift in Sources */,
+				76B3B37A2AC1DF49003F1BD9 /* ViewModelDelegate.swift in Sources */,
 				76B3B3492AC16E3D003F1BD9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
