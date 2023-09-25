@@ -66,4 +66,10 @@ extension ViewController: UISearchBarDelegate{
         viewModel.fetchData(query: searchBar.text)
         searchBar.resignFirstResponder()
     }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if searchBar.text == ""
+        {
+            viewModel.fetchData(query: nil)
+        }
+    }
 }
