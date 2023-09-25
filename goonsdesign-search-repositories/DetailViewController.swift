@@ -25,6 +25,8 @@ class DetailViewController: UIViewController {
         }
         if let language = repositoriesItem?.language{
             self.language.text = "Written in \(language)"
+        }else{
+            self.language.text = nil
         }
         
         
