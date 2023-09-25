@@ -24,4 +24,5 @@ class RepositoriesItem:Codable{
 }
 struct RepositoriesOwner:Codable{
     var avatar_url:String
+    var login:String
 }

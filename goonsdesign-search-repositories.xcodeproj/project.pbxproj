@@ -20,6 +20,7 @@
 		76B3B37A2AC1DF49003F1BD9 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */; };
 		76B3B37D2AC1F3A7003F1BD9 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B37C2AC1F3A7003F1BD9 /* Repositories.swift */; };
 		76B3B37F2AC22ADD003F1BD9 /* RepositoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B37E2AC22ADD003F1BD9 /* RepositoriesTableViewCell.swift */; };
+		76B3B3812AC22F45003F1BD9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3802AC22F45003F1BD9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
 		76B3B37C2AC1F3A7003F1BD9 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		76B3B37E2AC22ADD003F1BD9 /* RepositoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewCell.swift; sourceTree = "<group>"; };
+		76B3B3802AC22F45003F1BD9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				76B3B3512AC16E3F003F1BD9 /* LaunchScreen.storyboard */,
 				76B3B3542AC16E3F003F1BD9 /* Info.plist */,
 				76B3B37E2AC22ADD003F1BD9 /* RepositoriesTableViewCell.swift */,
+				76B3B3802AC22F45003F1BD9 /* DetailViewController.swift */,
 			);
 			path = "goonsdesign-search-repositories";
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				76B3B37A2AC1DF49003F1BD9 /* ViewModelDelegate.swift in Sources */,
 				76B3B3492AC16E3D003F1BD9 /* SceneDelegate.swift in Sources */,
 				76B3B37F2AC22ADD003F1BD9 /* RepositoriesTableViewCell.swift in Sources */,
+				76B3B3812AC22F45003F1BD9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
