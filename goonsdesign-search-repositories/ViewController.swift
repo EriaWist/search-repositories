@@ -15,7 +15,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         viewModel.delegate = self
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToDetailViewController"{
+            if let detailViewController = segue.destination as? DetailViewController{
+                detailViewController.repositoriesItem = viewModel.selectRepository
+            }
+        }
+    }
 
 }
 
@@ -33,6 +39,10 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        viewModel.selectRepository = viewModel.repositoriesItem[indexPath.row]
+        return indexPath
+    }
 }
 
 extension ViewController:ViewModelDelegate{

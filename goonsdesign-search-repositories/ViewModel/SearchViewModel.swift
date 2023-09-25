@@ -11,6 +11,7 @@ import Combine
 class SearchViewModel{
     weak var delegate: ViewModelDelegate?
     var cancellBag = Set<AnyCancellable>()
+    var selectRepository:RepositoriesItem? = nil
     private var _repositoriesItem:[RepositoriesItem] = []
     {
         didSet{
@@ -43,7 +44,7 @@ class SearchViewModel{
     func fetchData(query:String?) {
         _repositoriesItem = []
         if let query = query{
-            repositoriesPublisher(query: query)
+            repositoriesPublisher(query: query)?
                 .sink(receiveCompletion: {error in
                     print(error)
                 }, receiveValue: { [weak self] repositories in
@@ -52,8 +53,11 @@ class SearchViewModel{
                 .store(in: &cancellBag)
         }
     }
-    private func repositoriesPublisher(query:String) -> AnyPublisher<Repositories,Error> {
-        return URLSession.shared.dataTaskPublisher(for: URL(string: "https://api.github.com/search/repositories?q=\(query)")!)
+    private func repositoriesPublisher(query:String) -> AnyPublisher<Repositories,Error>? {
+        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(query)") else{
+            return nil
+        }
+        return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap() { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
