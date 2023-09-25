@@ -17,6 +17,24 @@ class SearchViewModel{
             delegate?.update()
         }
     }
+    func getImageData(repositoriesItem:[RepositoriesItem]) {
+        repositoriesItem.publisher
+            .map(\.owner.avatar_url)
+            .flatMap(maxPublishers:.max(1)) { url in
+                URLSession.shared.dataTaskPublisher(for: URL(string: url)!)
+                           .map(\.data)
+                           .replaceError(with: Data())
+            }
+            .zip(repositoriesItem.publisher)
+            .map{ (imageData, item) -> RepositoriesItem in
+                item.imageData = imageData
+                return item
+            }
+            .collect()
+            .sink(receiveValue: {
+                self._repositoriesItem = $0
+            }).store(in: &cancellBag)
+    }
     var repositoriesItem:[RepositoriesItem]{
         get{
             _repositoriesItem
@@ -29,7 +47,7 @@ class SearchViewModel{
                 .sink(receiveCompletion: {error in
                     print(error)
                 }, receiveValue: { [weak self] repositories in
-                    self?._repositoriesItem = repositories.items
+                    self?.getImageData(repositoriesItem: repositories.items)
                 })
                 .store(in: &cancellBag)
         }
@@ -39,7 +57,6 @@ class SearchViewModel{
             .tryMap() { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
-                    print("2--")
                     throw URLError(.badServerResponse)
                 }
                 return element.data

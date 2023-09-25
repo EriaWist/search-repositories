@@ -11,7 +11,7 @@ struct Repositories:Codable{
     var items:[RepositoriesItem]
     var total_count:Int
 }
-struct RepositoriesItem:Codable{
+class RepositoriesItem:Codable{
     var full_name:String
     var description:String?
     var language:String?
@@ -20,6 +20,7 @@ struct RepositoriesItem:Codable{
     var watchers_count:Int
     var forks_count:Int
     var open_issues_count:Int
+    var imageData:Data?
 }
 struct RepositoriesOwner:Codable{
     var avatar_url:String

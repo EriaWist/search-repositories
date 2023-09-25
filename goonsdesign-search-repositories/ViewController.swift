@@ -21,12 +21,12 @@ class ViewController: UIViewController {
 
 extension ViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.repositoriesItem.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.imageView?.image = UIImage(systemName: "doc.badge.ellipsis")
+        cell.imageView?.image = UIImage(data: viewModel.repositoriesItem[indexPath.row].imageData!)
         return cell
     }
     
@@ -34,6 +34,15 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
 
 extension ViewController:ViewModelDelegate{
     func update() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [self] in
+            tableView.reloadData()
+        }
+    }
+}
+
+extension ViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.fetchData(query: searchBar.text)
+        searchBar.resignFirstResponder()
     }
 }
