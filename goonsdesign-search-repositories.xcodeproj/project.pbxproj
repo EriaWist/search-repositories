@@ -18,6 +18,7 @@
 		76B3B36A2AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3692AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift */; };
 		76B3B3782AC1DED9003F1BD9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3772AC1DED9003F1BD9 /* SearchViewModel.swift */; };
 		76B3B37A2AC1DF49003F1BD9 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */; };
+		76B3B37D2AC1F3A7003F1BD9 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3B37C2AC1F3A7003F1BD9 /* Repositories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		76B3B3692AC16E3F003F1BD9 /* goonsdesign_search_repositoriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goonsdesign_search_repositoriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76B3B3772AC1DED9003F1BD9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
+		76B3B37C2AC1F3A7003F1BD9 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		76B3B3452AC16E3D003F1BD9 /* goonsdesign-search-repositories */ = {
 			isa = PBXGroup;
 			children = (
+				76B3B37B2AC1F038003F1BD9 /* Model */,
 				76B3B3762AC1DE6D003F1BD9 /* ViewModel */,
 				76B3B3462AC16E3D003F1BD9 /* AppDelegate.swift */,
 				76B3B3482AC16E3D003F1BD9 /* SceneDelegate.swift */,
@@ -139,6 +142,14 @@
 				76B3B3792AC1DF49003F1BD9 /* ViewModelDelegate.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		76B3B37B2AC1F038003F1BD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76B3B37C2AC1F3A7003F1BD9 /* Repositories.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				76B3B34B2AC16E3D003F1BD9 /* ViewController.swift in Sources */,
 				76B3B3472AC16E3D003F1BD9 /* AppDelegate.swift in Sources */,
 				76B3B3782AC1DED9003F1BD9 /* SearchViewModel.swift in Sources */,
+				76B3B37D2AC1F3A7003F1BD9 /* Repositories.swift in Sources */,
 				76B3B37A2AC1DF49003F1BD9 /* ViewModelDelegate.swift in Sources */,
 				76B3B3492AC16E3D003F1BD9 /* SceneDelegate.swift in Sources */,
 			);
