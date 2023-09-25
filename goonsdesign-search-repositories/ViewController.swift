@@ -25,8 +25,11 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.imageView?.image = UIImage(data: viewModel.repositoriesItem[indexPath.row].imageData!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "repositoriesCell") as! RepositoriesTableViewCell
+        let item = viewModel.repositoriesItem[indexPath.row]
+        cell.icon?.image = UIImage(data: item.imageData!)
+        cell.title.text = item.full_name
+        cell.descriptionText.text = item.description
         return cell
     }
     
