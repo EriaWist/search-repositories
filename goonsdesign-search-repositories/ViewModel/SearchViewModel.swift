@@ -56,7 +56,7 @@ class SearchViewModel{
         }
     }
     private func repositoriesPublisher(query:String) -> AnyPublisher<Repositories,Error>? {
-        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(query)") else{
+        guard let urlStr = "https://api.github.com/search/repositories?q=\(query)".addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed),let url = URL(string: urlStr) else{
             return nil
         }
         return URLSession.shared.dataTaskPublisher(for: url)
