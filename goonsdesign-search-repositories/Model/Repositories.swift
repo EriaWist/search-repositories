@@ -12,6 +12,7 @@ struct Repositories:Codable{
     var total_count:Int
 }
 class RepositoriesItem:Codable{
+    var id:Int
     var full_name:String
     var description:String?
     var language:String?
